@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using project.control.alt.defeat.Domain.Catalog;
+using project.control.alt.defeat.Data;
 
 namespace project.control.alt.defeat.Api.Controllers
 {
@@ -8,6 +9,13 @@ namespace project.control.alt.defeat.Api.Controllers
     [Route("[controller]")]
     public class CatalogController : ControllerBase
     {
+        private readonly StoreContext _db;
+
+        public CatalogController(StoreContext db)
+        {
+            _db = db;
+        }
+
         [HttpGet]
         public IActionResult GetItems()
         {
@@ -17,7 +25,7 @@ namespace project.control.alt.defeat.Api.Controllers
                         new Item("Shorts", "Ohio State shorts.", "Nike", 44.99m)
                 };
 
-                return Ok(items);
+                return Ok(_db.Items);
         }
         [HttpGet("{id:int}")]
         public IActionResult GetItem(int id)
