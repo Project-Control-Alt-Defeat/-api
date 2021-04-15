@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using project.control.alt.defeat.Data;
+using project.control.alt.defeat.Domain;
 
 namespace project.control.alt.defeat.Api
 {
