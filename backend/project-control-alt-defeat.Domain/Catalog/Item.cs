@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System;
+using project.control.alt.defeat.Domain.Catalog;
 
 namespace project.control.alt.defeat.Domain.Catalog
 {
