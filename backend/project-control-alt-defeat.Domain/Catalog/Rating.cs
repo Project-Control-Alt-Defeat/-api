@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using project.control.alt.defeat.Domain.Catalog;
 
 namespace project.control.alt.defeat.Domain.Catalog
 {
@@ -10,11 +11,9 @@ namespace project.control.alt.defeat.Domain.Catalog
         public string UserName { get ; set; }
         public string Review { get ; set; }
 
-        public Rating(){}
-
-        public Rating(int stars, string userName, string review)
+        public Rating(int star, string userName, string review)
         {
-            if(stars < 1 || stars > 5)
+            if(star < 1 || star > 5)
             {
                 throw new ArgumentException("Star rating must be an integer 1, 2, 3, 4,or 5.");
             }
@@ -24,9 +23,10 @@ namespace project.control.alt.defeat.Domain.Catalog
                 throw new ArgumentException("UserName cannot be null");
             }
 
-            this.Star = stars;
+            this.Star = star;
             this.UserName = userName;
             this.Review = review;
+
         }
 
     }
