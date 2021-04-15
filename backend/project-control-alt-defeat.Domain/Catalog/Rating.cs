@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace project.control.alt.defeat.Domain.Catalog
 {
@@ -6,8 +7,10 @@ namespace project.control.alt.defeat.Domain.Catalog
     {
         public int Id{ get; set; }
         public int Star { get; set; }
-        public string UserName {get; set; }
-        public string Review {get;set; }
+        public string UserName { get ; set; }
+        public string Review { get ; set; }
+
+        public Rating(){}
 
         public Rating(int stars, string userName, string review)
         {
@@ -20,9 +23,11 @@ namespace project.control.alt.defeat.Domain.Catalog
             {
                 throw new ArgumentException("UserName cannot be null");
             }
+
             this.Star = stars;
             this.UserName = userName;
             this.Review = review;
         }
+
     }
 }
