@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System;
-using project.control.alt.defeat.Domain.Catalog;
 
 namespace project.control.alt.defeat.Domain.Catalog
 {
@@ -38,7 +37,6 @@ namespace project.control.alt.defeat.Domain.Catalog
             this.Brand = brand;
             this.Price = price;
         }
-
         public void AddRating(Rating rating)
         {
             this.Ratings.Add(rating);
