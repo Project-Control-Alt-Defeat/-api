@@ -20,6 +20,7 @@ namespace project_control_alt_defeat.Domain.Tests
             Assert.AreEqual("Mike", rating.UserName);
             Assert.AreEqual("Great fit!", rating.Review);
         }
+        
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void Create_With_Bad_Start_Throws_Error()
