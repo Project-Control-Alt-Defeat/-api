@@ -1,9 +1,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using project.control.alt.defeat.Domain.Catalog;
 
 namespace project_control_alt_defeat.Domain.Tests
 {
     [TestClass]
-    public class Rating
+    public class UnitTest1
     {
         [TestMethod]
         public void Can_Create_New_Rating()
