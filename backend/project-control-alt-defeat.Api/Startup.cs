@@ -32,6 +32,14 @@ namespace project.control.alt.defeat.Api
                 opt.UseSqlite(Configuration.GetConnectionString("LocalDb"),
                      b => b.MigrationsAssembly("project-control-alt-defeat.Api")));
 
+            services.AddCors(options => 
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("*");
+                });
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -49,6 +57,8 @@ namespace project.control.alt.defeat.Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "project_control_alt_defeat.Api v1"));
             }
 
+            app.UseCors();
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
