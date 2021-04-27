@@ -11,7 +11,7 @@ namespace project_control_alt_defeat.Domain.Tests
         public void Can_Create_New_Item()
         {
             //Arrange
-            var item = new Item("Name", "Description", "Brand", 10.00m);
+            var item = new Item("Name", "Description", "Brand", "/images/d1.jpg", 10.00m);
 
             //Act - skip because there isn't action on constructor
 
@@ -19,6 +19,7 @@ namespace project_control_alt_defeat.Domain.Tests
             Assert.AreEqual("Name", item.Name);
             Assert.AreEqual("Description", item.Description);
             Assert.AreEqual("Brand", item.Brand);
+            Assert.AreEqual("/images/d1.jpg", item.ImageUrl);
             Assert.AreEqual(10.00m, item.Price);
         }
 
@@ -26,14 +27,14 @@ namespace project_control_alt_defeat.Domain.Tests
         [ExpectedException(typeof(ArgumentException))]
         public void Create_With_Bad_Start_Throws_Error()
         {
-            var rating = new Item("Name", "Description", "Brand",1001m);
+            var rating = new Item("Name", "Description", "Brand", "/images/d1.jpg", 1001m);
         }
 
         [TestMethod]
         public void Can_Create_Add_Rating()
         {
             //Arrange
-            var item = new Item("Name", "Description", "Brand", 10.00m);
+            var item = new Item("Name", "Description", "Brand", "/images/d1.jpg", 10.00m);
             var rating = new Rating(5, "Name", "Review");
 
             //Act
