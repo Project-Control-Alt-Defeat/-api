@@ -42,6 +42,7 @@ namespace project.control.alt.defeat.Domain.Catalog
             this.ImageUrl = imageUrl;
             this.Brand = brand;
             this.Price = price;
+            this.Ratings = new List<Rating>();
         }
         public void AddRating(Rating rating)
         {
